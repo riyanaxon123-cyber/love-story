@@ -1,18 +1,14 @@
-alert("login.js ishladi");
-
 function checkPassword() {
 
-    const password = document.getElementById("password").value.trim();
+    const password = document.getElementById("password").value;
 
-    if (password === "IandR27121609") {
+    const correctPassword = "IandR27121609";
 
-        alert("Parol to'g'ri!");
+    if (password === correctPassword) {
 
         window.location.href = "index.html";
 
     } else {
-
-        alert("Parol noto'g'ri!");
 
         document.getElementById("error-message").textContent =
             "Incorrect password. Please try again.";
