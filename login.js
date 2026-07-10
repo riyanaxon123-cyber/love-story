@@ -6,7 +6,8 @@ function checkPassword() {
 
     if (password === correctPassword) {
 
-        window.location.href = "index.html";
+        sessionStorage.setItem("loggedIn", "true");
+window.location.href = "index.html";
 
     } else {
 
