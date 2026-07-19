@@ -1538,7 +1538,32 @@ font-size:18px;
     padding:45px;
     border-radius:25px;
     text-align:center;
-    box-shadow:0 20px 50px rgba(0,0,0,.12);
+    box-shadow:
+0 25px 70px rgba(0,0,0,.10),
+inset 0 1px 1px rgba(255,255,255,.5);
+
+}
+.login-box{
+
+    animation:loginFade .7s ease;
+
+}
+
+@keyframes loginFade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
 
 }
 
@@ -1601,5 +1626,516 @@ font-size:18px;
     color:red;
     margin-top:15px;
     font-size:15px;
+
+}
+/* ==========================================
+   PREMIUM MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 768px){
+
+html{
+    font-size:15px;
+}
+
+.navbar{
+    padding:18px 5%;
+    flex-direction:column;
+    gap:15px;
+}
+
+nav{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:18px;
+}
+
+.hero{
+    min-height:100vh;
+    padding:25px 18px;
+}
+
+.glass{
+    padding:35px 22px;
+    border-radius:22px;
+}
+
+.story-container{
+    grid-template-columns:1fr;
+    gap:40px;
+}
+
+.gallery-grid,
+.conversation-book,
+.videos-grid,
+.special-grid,
+.little-grid{
+    grid-template-columns:1fr;
+}
+
+.gallery-card,
+.video-card{
+    border-radius:22px;
+}
+
+.gallery-card{
+    height:auto;
+}
+
+.video-card video{
+    aspect-ratio:9/16;
+}
+
+.memory-quote p{
+    font-size:32px;
+}
+
+.footer{
+    padding:70px 25px;
+}
+
+.footer h2{
+    font-size:28px;
+}
+
+.music-btn{
+    width:55px;
+    height:55px;
+    right:18px;
+    bottom:18px;
+}
+
+}
+/* ==========================================
+   PREMIUM HERO
+========================================== */
+
+.hero{
+
+    background:
+    radial-gradient(circle at top, rgba(255,255,255,.35), transparent 60%),
+    linear-gradient(180deg,#fff7fa 0%,#fdeef3 45%,#f8edf5 100%);
+
+}
+
+.glass{
+
+    max-width:760px;
+    backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);
+
+    border:1px solid rgba(255,255,255,.45);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.08),
+    inset 0 1px 1px rgba(255,255,255,.5);
+
+    transition:
+    transform .45s ease,
+    box-shadow .45s ease;
+
+}
+
+.glass:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.12),
+    inset 0 1px 1px rgba(255,255,255,.6);
+
+}
+
+.hero h1{
+
+    letter-spacing:1px;
+    line-height:1.15;
+
+}
+
+.hero p{
+
+    line-height:1.9;
+
+}
+/* ==========================================
+   PREMIUM NAVBAR
+========================================== */
+
+.navbar{
+
+    transition:
+    background .4s ease,
+    backdrop-filter .4s ease,
+    box-shadow .4s ease,
+    padding .35s ease;
+
+}
+
+nav a{
+
+    position:relative;
+    transition:.35s;
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    bottom:-6px;
+
+    width:0;
+    height:2px;
+
+    transform:translateX(-50%);
+
+    background:#d88ea5;
+
+    border-radius:10px;
+
+    transition:.35s;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+nav a:hover{
+
+    color:#d88ea5;
+
+}
+/* ==========================================
+   DREAMY LOGIN PAGE
+========================================== */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 190, 220, .45),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(255, 210, 230, .5),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #fffafd,
+            #fdeef5
+        );
+
+    overflow: hidden;
+}
+
+
+/* Soft glowing background */
+
+.login-page::before,
+.login-page::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 190, 220, .22);
+
+    filter: blur(70px);
+
+    pointer-events: none;
+
+}
+
+.login-page::before {
+
+    top: -80px;
+    left: -80px;
+
+}
+
+.login-page::after {
+
+    right: -80px;
+    bottom: -80px;
+
+}
+
+
+/* Login card */
+
+.login-box {
+
+    width: min(440px, 82vw);
+
+    padding: 58px 48px;
+
+    border-radius: 32px;
+
+    background: rgba(255, 255, 255, .78);
+
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+
+    border: 1px solid rgba(255, 255, 255, .8);
+
+    box-shadow:
+        0 25px 70px rgba(180, 120, 150, .16),
+        inset 0 1px 1px rgba(255, 255, 255, .9);
+
+    text-align: center;
+
+    animation: loginFade .8s ease;
+
+}
+
+
+/* Title */
+
+.login-box h1 {
+
+    font-size: clamp(42px, 6vw, 70px);
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+
+    color: #cf659c;
+
+    margin: 0 auto 35px;
+
+    max-width: 100%;
+
+    word-wrap: break-word;
+
+}
+
+
+/* Description */
+
+.login-box p {
+
+    color: #555;
+
+    line-height: 1.7;
+
+}
+
+
+/* Password input */
+
+.login-box input {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 17px 20px;
+
+    margin-top: 22px;
+
+    border-radius: 16px;
+
+    border: 2px solid #f4c4dc;
+
+    background: rgba(255, 255, 255, .65);
+
+    outline: none;
+
+    font-size: 16px;
+
+    transition: .3s;
+
+}
+
+.login-box input:focus {
+
+    border-color: #d66aa2;
+
+    box-shadow:
+        0 0 0 5px rgba(214, 106, 162, .12);
+
+}
+
+
+/* Enter button */
+
+.login-box button {
+
+    width: 100%;
+
+    margin-top: 24px;
+
+    padding: 17px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d66aa2,
+            #c85691
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+    box-shadow:
+        0 10px 25px rgba(200, 86, 145, .22);
+
+}
+
+.login-box button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 32px rgba(200, 86, 145, .32);
+
+}
+
+.login-box button:active {
+
+    transform: scale(.98);
+
+}
+
+
+/* Login animation */
+
+@keyframes loginFade {
+
+    from {
+
+        opacity: 0;
+        transform: translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .login-box {
+
+        width: 82vw;
+
+        padding: 45px 25px;
+
+        border-radius: 28px;
+
+    }
+
+    .login-box h1 {
+
+        font-size: 48px;
+
+        letter-spacing: -1px;
+
+    }
+
+}
+/* ==========================================
+   SUBTLE PREMIUM CARD HOVER
+========================================== */
+
+.gallery-card,
+.video-card,
+.little-card {
+
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease;
+
+}
+
+.gallery-card:hover,
+.video-card:hover,
+.little-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 18px 45px rgba(180, 120, 150, .16);
+
+}
+
+
+/* Images */
+
+.gallery-card img,
+.little-card img {
+
+    transition:
+        transform .6s ease;
+
+}
+
+.gallery-card:hover img,
+.little-card:hover img {
+
+    transform: scale(1.035);
+
+}
+/* ==========================================
+   PREMIUM BUTTONS
+========================================== */
+
+button,
+.enter-btn {
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        opacity .3s ease;
+
+}
+
+button:hover,
+.enter-btn:hover {
+
+    transform: translateY(-2px);
+
+}
+
+button:active,
+.enter-btn:active {
+
+    transform: scale(.97);
 
 }
