@@ -135,30 +135,36 @@ document.querySelectorAll("nav a").forEach(link=>{
 
 });
 
-
 /* ==========================================
-   Music Button (Coming Soon)
+   Background Music
 ========================================== */
 
-const musicBtn=document.querySelector(".music-btn");
+const bgMusic = document.getElementById("bgMusic");
+/* ==========================================
+   MUSIC BUTTON
+========================================== */
 
-let musicOn=false;
+const musicBtn = document.querySelector(".music-btn");
 
-musicBtn.addEventListener("click",()=>{
+let musicOn = false;
 
-    musicOn=!musicOn;
+musicBtn.addEventListener("click", () => {
 
-    if(musicOn){
+    if (musicOn) {
 
-        musicBtn.innerHTML="♫";
+        bgMusic.pause();
 
-        musicBtn.style.transform="scale(1.15)";
+        musicOn = false;
 
-    }else{
+        musicBtn.style.transform = "scale(1)";
 
-        musicBtn.innerHTML="♫";
+    } else {
 
-        musicBtn.style.transform="scale(1)";
+        bgMusic.play();
+
+        musicOn = true;
+
+        musicBtn.style.transform = "scale(1.15)";
 
     }
 
@@ -171,11 +177,7 @@ musicBtn.addEventListener("click",()=>{
 
 console.log("%cOur Memories — I & R ♡","font-size:18px;color:#b48b8b;font-weight:bold;");
 console.log("%cBuilt with love.","color:#9b7d7d;");
-/* ==========================================
-   Background Music
-========================================== */
 
-const bgMusic = document.getElementById("bgMusic");
 
 if (enterBtn && bgMusic) {
 
